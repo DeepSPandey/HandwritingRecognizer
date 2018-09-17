@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import GreyscaleImage
+import BlackWhiteImage
 
 filename = "semeion.data.txt"
 savefile = "tempFile.txt"
@@ -16,6 +17,9 @@ Y = array[:,:10]
 
 img = cv2.imread('testImage.jpg')
 img2 = GreyscaleImage.greyscale(img,False) # (r + b + g) / 3(simple average)
+# better imgdir = cv2.imread('testImage.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('testImage.jpg')
+img2 = BlackWhiteImage.blackWhite(img,True) # (r + b + g) / 3(simple average)
 # better imgdir = cv2.imread('testImage.jpg', cv2.IMREAD_GRAYSCALE)
 
 print(img2.shape)
